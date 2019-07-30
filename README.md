@@ -8,5 +8,5 @@ This script uses Beautiful Soup to scrape the names from http://assets.gfycat.co
 
 ## Running the application
 
-Run `random_animal_names.py` and enter the number of names you want to generate. The script will then populate a list of random names for you.
+Run `random_animal_names.py` on the command line and enter the number of names you want to generate. The script will then populate a list of random names for you.
 
