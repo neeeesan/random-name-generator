@@ -14,16 +14,16 @@ def random_word():
 
 
 def main(n):
-    list = []
+    final_list = []
     num = 0
     while num < int(n):
         word = random_word()
-        while (word in list):
+        while (word in final_list):
             word = random_word()
-        list.append(word)
+        final_list.append(word)
         num += 1
     
-    for idx, word in enumerate(list, 1):
+    for idx, word in enumerate(final_list, 1):
         print(f"{idx}: {word}")
 
 
