@@ -15,14 +15,13 @@ def random_word():
 
 def main(n):
     final_list = []
-    num = 0
-    while num < int(n):
-        word = random_word()
-        while (word in final_list):
-            word = random_word()
-        final_list.append(word)
-        num += 1
+    num = int(n)
     
+    for word in range(num):
+        while (word not in final_list):
+            word = random_word()
+            final_list.append(word)
+
     for idx, word in enumerate(final_list, 1):
         print(f"{idx}: {word}")
 
