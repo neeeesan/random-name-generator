@@ -1,30 +1,5 @@
 import random
-import requests
-from bs4 import BeautifulSoup
-
-adj_page = requests.get('http://assets.gfycat.com/adjectives')
-ani_page = requests.get('http://assets.gfycat.com/animals')
-
-adj_bs = BeautifulSoup(adj_page.text, 'html.parser')
-ani_bs = BeautifulSoup(ani_page.text, 'html.parser')
-
-adjectives = adj_bs.string.splitlines()
-animals = ani_bs.string.splitlines()
-
-
-def append(list):
-    for word in list:
-        adjectives.append(word)
-    
-def capitalise(first_list, second_list):
-    i = j = 0 
-    for _word in first_list:
-        first_list[i] = first_list[i].capitalize()
-        i += 1
-
-    for _word in second_list:
-        second_list[j] = second_list[j].capitalize()
-        j += 1
+from scraper import adjectives, animals
 
 def random_word():
     choice = random.randint(1, 2)
@@ -38,7 +13,7 @@ def random_word():
         return f"{word1} {animal}"
 
 
-def loop(n):
+def main(n):
     list = []
     num = 0
     while num < int(n):
@@ -52,19 +27,9 @@ def loop(n):
         print(f"{idx}: {word}")
 
 
-def save_word(word):
-    print(word)
-
 def usr_input():
     num = input("Enter the number of words you want: ")
-    loop(num)
-
-def cust_animal():
-    animal = input("Enter an animal you would like to use: ")
-
-    for word in animals:
-        if animal.lower == word:
-            return word
+    main(num)
 
 if __name__ == '__main__':
     # capitalise(adj_list, ani_list)
